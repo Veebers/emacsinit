@@ -23,15 +23,15 @@
 	(font-lock-function-name-face ((t (:foreground "#cae682"))))
 
     ;; 2010-11-30 chrisl: This is what i've added / modified
-    ;; (modeline ((t (:background "#444444" :foreground "#cccddd"))))
-    (mode-line ((t (:background "green" :foreground "red"))))
+    ;; (mode-line ((t (:background "#444444" :foreground "#cccddd"))))
+    (mode-line ((t (:foreground "#cccddd" :background "darkslateblue" :box (:line-width -1 :style released-button)))))
     (region ((t (:background "#555577"))))
+
+    (fringe ((t (:background "grey10"))))
 
     ;; Modeline stuff
     ;; 242424
-    ;; (mode-line-inactive ((t (:background "#444444" :foreground "#898bb8"))))
-    (mode-line-inactive ((t (:background "blue" :foreground "red"))))
-    (mode-line-active ((t (:background "green" :foreground "blue"))))
-    (mode-line-buffer-id ((t (:foreground "#cccddd" :bold t :weight bold))))
+    (mode-line-inactive ((t (:background "#444444" :foreground "paleturquoise4"))))
+    (mode-line-buffer-id ((t (:foreground "lightyellow" :bold t :weight bold))))
     (mode-line-emphasis ((t (:foreground "#cccddd" :bold t :weight bold))))
 )))
