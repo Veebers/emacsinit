@@ -82,8 +82,25 @@
 (global-set-key [?\C-o] 'bja-open-line-below)
 (global-set-key [?\M-o] 'bja-open-line-above)
 
-;; Supporting functions for keybindings
+;; Setting up packages.
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  )
 
+;; Projectile setup
+(setq projectile-indexing-method 'git)
+(setq projectile-enable-caching t)
+(setq projectile-keymap-prefix (kbd "C-c C-p"))
+(projectile-global-mode t)
+(let ((ack_path "~/bin/ack"))
+  (if (file-exists-p ack_path)
+      (setq ack-and-a-half-executable ack_path)
+    )
+  )
+
+;; Supporting functions for keybindings
 ;; Vim-like open linie above/below current
 (defun bja-open-line-below ()
   (interactive)
