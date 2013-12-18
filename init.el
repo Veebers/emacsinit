@@ -1,3 +1,10 @@
+;; To explore and potentially use later on:
+;;  - diff-hl
+;;  - linum-relative
+
+(add-to-list 'load-path "~/.emacs.d/config")
+(add-to-list 'load-path  "~/.emacs.d/elpa/fill-column-indicator-20130807.619/")
+
 ;; General configuration
 
 (require 'color-theme)
@@ -89,6 +96,10 @@
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   )
 
+;; fill column
+(require 'fill-column-indicator)
+(setq fci-rule-color "#99968b")
+
 ;; Projectile setup
 ;; (setq projectile-indexing-method 'git)
 (require 'grizzl)
@@ -112,6 +123,9 @@
 readable]" " [Too big]" " [Confirm]")))
 (defun ido-disable-line-trucation () (set (make-local-variable 'truncate-lines) nil))
 (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
+
+;; Modes setup
+(autoload 'python-mode "init_python" "" t)
 
 ;; Supporting functions for keybindings
 ;; Vim-like open linie above/below current
