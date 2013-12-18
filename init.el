@@ -90,10 +90,13 @@
   )
 
 ;; Projectile setup
-(setq projectile-indexing-method 'git)
-(setq projectile-enable-caching t)
-(setq projectile-keymap-prefix (kbd "C-c C-p"))
+;; (setq projectile-indexing-method 'git)
+(require 'grizzl)
 (projectile-global-mode t)
+(setq projectile-enable-caching t)
+(setq projectile-completion-system 'grizzl)
+(setq projectile-keymap-prefix (kbd "C-c p"))
+
 (let ((ack_path "~/bin/ack"))
   (if (file-exists-p ack_path)
       (setq ack-and-a-half-executable ack_path)
