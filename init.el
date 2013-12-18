@@ -1,6 +1,8 @@
 ;; To explore and potentially use later on:
 ;;  - diff-hl
 ;;  - linum-relative
+;;  - git-gutter
+;;  - volatile-highlights
 
 (add-to-list 'load-path "~/.emacs.d/config")
 (add-to-list 'load-path  "~/.emacs.d/elpa/fill-column-indicator-20130807.619/")
