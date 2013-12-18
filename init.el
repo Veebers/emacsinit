@@ -9,7 +9,7 @@
 
 (require 'color-theme)
 (setq color-theme-is-global 1)
-(load "~/.emacs.d/color-theme-wombat.el")
+(load "~/.emacs.d/config/color-theme-wombat.el")
 (color-theme-wombat)
 (set-cursor-color "white")
 (global-hl-line-mode 1)
