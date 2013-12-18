@@ -89,12 +89,20 @@
 (global-set-key [?\C-o] 'bja-open-line-below)
 (global-set-key [?\M-o] 'bja-open-line-above)
 
-;; Setting up packages.
+;; -- Setting up packages. --
 (when (>= emacs-major-version 24)
   (require 'package)
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   )
+
+;; auto-complete
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories
+             "~/.emacs.d/elpa/auto-complete-20131128.233/dict")
+(ac-config-default)
+(setq ac-ignore-case nil)
+(add-to-list 'ac-modes 'python-mode)
 
 ;; fill column
 (require 'fill-column-indicator)
