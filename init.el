@@ -3,6 +3,11 @@
 ;;  - linum-relative
 ;;  - git-gutter
 ;;  - volatile-highlights
+;;  - Yasnippet !
+;;  - multiple-cursors
+;;  - magit
+;;  - expand-region
+;;  - (perhaps) web-mode.el: web-mode.el
 
 (add-to-list 'load-path "~/.emacs.d/config")
 (add-to-list 'load-path  "~/.emacs.d/elpa/fill-column-indicator-20130807.619/")
