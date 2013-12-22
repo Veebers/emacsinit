@@ -159,6 +159,10 @@ readable]" " [Too big]" " [Confirm]")))
 (require 'volatile-highlights)
 (volatile-highlights-mode t)
 
+;; move-text
+(require 'move-text)
+(move-text-default-bindings)
+
 ;; Supporting functions for keybindings
 ;; Vim-like open linie above/below current
 (defun bja-open-line-below ()
