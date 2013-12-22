@@ -147,6 +147,7 @@ readable]" " [Too big]" " [Confirm]")))
 
 ;; Modes setup
 (autoload 'python-mode "init_python" "" t)
+(autoload 'TeX-mode "init_auctex" "" t)
 
 ;; Supporting functions for keybindings
 ;; Vim-like open linie above/below current
