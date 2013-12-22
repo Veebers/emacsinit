@@ -96,6 +96,9 @@
 (global-set-key [?\C-o] 'bja-open-line-below)
 (global-set-key [?\M-o] 'bja-open-line-above)
 
+;; unfill paragraphs
+(global-set-key "\C-c\C-q" 'unfill-paragraph)
+
 ;; -- Setting up packages. --
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -208,3 +211,14 @@ a single line instead."
    (if mark-active (list (region-beginning) (region-end) )
      (list (line-beginning-position)
            (line-beginning-position 2)))))
+
+;; Opposite of fill paragraph
+(defun unfill-paragraph ()
+  (interactive)
+  (let ((fill-column (point-max)))
+    (fill-paragraph nil)))
+
+(defun unfill-region (start end)
+  (interactive "r")
+  (let ((fill-column (point-max)))
+    (fill-region start end nil)))
