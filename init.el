@@ -2,9 +2,7 @@
 ;;  - diff-hl (instead of git-gutter) perhaps not.
 ;;  - linum-relative [shows linenumbers from current line up and
 ;;    down. might not be useful]
-;;  - volatile-highlights
 ;;  - Yasnippet !
-;;  - multiple-cursors
 ;;  - magit (installed, just need to get used to using it.)
 ;;  - (perhaps) web-mode.el: web-mode.el
 
@@ -162,6 +160,18 @@ readable]" " [Too big]" " [Confirm]")))
 ;; move-text
 (require 'move-text)
 (move-text-default-bindings)
+
+;; Multiple-cursors
+(require 'multiple-cursors)
+
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+
+(global-set-key (kbd "C-}") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-{") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-{") 'mc/mark-all-like-this)
+
+(global-set-key (kbd "C-<") 'mc/unmark-next-like-this)
+(global-set-key (kbd "C->") 'mc/unmark-previous-like-this)
 
 ;; Supporting functions for keybindings
 ;; Vim-like open linie above/below current
