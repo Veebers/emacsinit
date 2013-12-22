@@ -1,7 +1,7 @@
 ;; To explore and potentially use later on:
-;;  - diff-hl
-;;  - linum-relative
-;;  - git-gutter
+;;  - diff-hl (instead of git-gutter) perhaps not.
+;;  - linum-relative [shows linenumbers from current line up and
+;;    down. might not be useful]
 ;;  - volatile-highlights
 ;;  - Yasnippet !
 ;;  - multiple-cursors
@@ -154,6 +154,10 @@ readable]" " [Too big]" " [Confirm]")))
 ;; Modes setup
 (autoload 'python-mode "init_python" "" t)
 (autoload 'TeX-mode "init_auctex" "" t)
+
+;; volatile-highlight mode
+(require 'volatile-highlights)
+(volatile-highlights-mode t)
 
 ;; Supporting functions for keybindings
 ;; Vim-like open linie above/below current
