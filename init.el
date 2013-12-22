@@ -96,6 +96,9 @@
 ;; unfill paragraphs
 (global-set-key "\C-c\C-q" 'unfill-paragraph)
 
+;; Get to magit status easily
+(global-set-key (kbd "<f5>") 'magit-status)
+
 ;; -- Setting up packages. --
 (when (>= emacs-major-version 24)
   (require 'package)
