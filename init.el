@@ -5,7 +5,7 @@
 ;;  - volatile-highlights
 ;;  - Yasnippet !
 ;;  - multiple-cursors
-;;  - magit
+;;  - magit (installed, just need to get used to using it.)
 ;;  - (perhaps) web-mode.el: web-mode.el
 
 (add-to-list 'load-path "~/.emacs.d/config")
