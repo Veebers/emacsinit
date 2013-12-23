@@ -106,11 +106,20 @@
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   )
 
+;; Yasnippet
+(global-set-key (kbd "M-/") 'hippie-expand)
+(require 'yasnippet)
+(yas-global-mode 1)
+(define-key yas-keymap (kbd "<return>") 'yas/exit-all-snippets)
+
 ;; auto-complete
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories
              "~/.emacs.d/elpa/auto-complete-20131128.233/dict")
 (ac-config-default)
+(define-key ac-menu-map (kbd "M-n") 'ac-next)
+(define-key ac-menu-map (kbd "M-p") 'ac-previous)
+
 (setq ac-ignore-case nil)
 (add-to-list 'ac-modes 'python-mode)
 
