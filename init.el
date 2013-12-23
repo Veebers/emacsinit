@@ -2,7 +2,7 @@
 ;;  - diff-hl (instead of git-gutter) perhaps not.
 ;;  - linum-relative [shows linenumbers from current line up and
 ;;    down. might not be useful]
-;;  - Yasnippet !
+;;  - Yasnippet - Having issues with multiple keys and custom snippets.
 ;;  - magit (installed, just need to get used to using it.)
 ;;  - (perhaps) web-mode.el: web-mode.el
 
@@ -111,6 +111,10 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 (define-key yas-keymap (kbd "<return>") 'yas/exit-all-snippets)
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+
+(require 'dropdown-list)
+(setq yas/prompt-functions '(yas/dropdown-prompt))
 
 ;; auto-complete
 (require 'auto-complete-config)
