@@ -189,6 +189,13 @@ readable]" " [Too big]" " [Confirm]")))
 (global-set-key (kbd "C-<") 'mc/unmark-next-like-this)
 (global-set-key (kbd "C->") 'mc/unmark-previous-like-this)
 
+;; Ace jump
+(autoload
+  'ace-jump-mode
+  "ace-jump-mode"
+  "Emacs quick move minor mode"
+  t)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 ;; Supporting functions for keybindings
 ;; Vim-like open linie above/below current
 (defun bja-open-line-below ()
