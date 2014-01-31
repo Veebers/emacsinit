@@ -1,10 +1,10 @@
 ;; To explore and potentially use later on:
 ;;  - diff-hl (instead of git-gutter) perhaps not.
 ;;  - linum-relative [shows linenumbers from current line up and
-;;    down. might not be useful]
+;;    down. Perhaps might not be useful]
 ;;  - Yasnippet - Having issues with multiple keys and custom snippets.
 ;;  - magit (installed, just need to get used to using it.)
-;;  - (perhaps) web-mode.el: web-mode.el
+;;  - (perhaps) web-mode.el: web-mode.el?
 
 (add-to-list 'load-path "~/.emacs.d/config")
 (add-to-list 'load-path  "~/.emacs.d/elpa/fill-column-indicator-20130807.619/")
@@ -69,9 +69,7 @@
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-region)
-; I miss my vim movement
-; I already have a 'delete line' so I won't need the delete blank line so I will
-; re-assign this one to something I should use more.
+
 (global-set-key "\C-x\C-o" 'occur)
 (global-set-key "\C-c\C-o" 'multi-occur-in-matching-buffers)
 
@@ -82,8 +80,9 @@
 
 (global-set-key "\C-c\C-l" 'line-to-buffer-top)
 
-(global-set-key "\C-xt" 'move-to-char)
-(global-set-key "\C-xT" 'moveback-to-char)
+;; Damn, forgot to bring these across from previous config
+;; (global-set-key "\C-xt" 'move-to-char)
+;; (global-set-key "\C-xT" 'moveback-to-char)
 (global-set-key [?\C-\*] 'isearch-forward-at-point)
 (global-set-key (kbd "C-M-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-M-r") 'isearch-backward-regexp)
@@ -203,6 +202,7 @@ readable]" " [Too big]" " [Confirm]")))
   "Emacs quick move minor mode"
   t)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
 ;; Supporting functions for keybindings
 ;; Vim-like open linie above/below current
 (defun bja-open-line-below ()
