@@ -24,7 +24,7 @@
 (line-number-mode t)
 (column-number-mode t)
 (windmove-default-keybindings)
-(windmove-default-keybindings 'meta)
+;; (windmove-default-keybindings 'meta)
 
 (setq cursor-type 'hbar)
 (setq default-cursor-type 'hbar)
@@ -93,6 +93,8 @@
 (global-set-key [?\C-o] 'bja-open-line-below)
 (global-set-key [?\M-o] 'bja-open-line-above)
 
+(global-set-key "\M-q" 'pretty-comment-line)
+
 ;; unfill paragraphs
 (global-set-key "\C-c\C-q" 'unfill-paragraph)
 
@@ -129,7 +131,9 @@
 
 ;; fill column
 (require 'fill-column-indicator)
-(setq fci-rule-color "#99968b")
+;; (setq fci-rule-color "#99968b")
+(setq fci-rule-color "#6B6A66")
+(setq fci-rule-width 1)
 
 ;; Projectile setup
 ;; (setq projectile-indexing-method 'git)
@@ -160,6 +164,9 @@ readable]" " [Too big]" " [Confirm]")))
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:setup-keys t)
 (setq jedi:complete-on-dot t)
+
+;; Javascript setup
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; expand-region setup
 (require 'expand-region)
@@ -266,3 +273,22 @@ a single line instead."
   (interactive "r")
   (let ((fill-column (point-max)))
     (fill-region start end nil)))
+
+(defun pretty-comment-line ()
+  "Fills the current lines comments"
+  (interactive)
+  (fill-region (line-beginning-position) (line-end-position) nil nil nil))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(python-check-command "flake8"))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(put 'narrow-to-region 'disabled nil)
