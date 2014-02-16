@@ -175,6 +175,13 @@ readable]" " [Too big]" " [Confirm]")))
 (autoload 'python-mode "init_python" "" t)
 (autoload 'TeX-mode "init_auctex" "" t)
 
+;; I think this is a better way to load customisation. Explore and
+;; perhaps generalise it for other modes.
+(add-hook 'scheme-mode-hook
+          (lambda ()
+            (load-library "init_scheme.el")))
+(add-hook 'scheme-mode-hook 'customise-scheme-mode)
+
 ;; volatile-highlight mode
 (require 'volatile-highlights)
 (volatile-highlights-mode t)
