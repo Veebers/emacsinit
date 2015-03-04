@@ -63,8 +63,11 @@
 
 ;; (Re)bindings of keys
 ; Steve told me to do these :P (from 10 Effective emacs)
-(global-set-key "\C-x\C-m" 'execute-extended-command)
-(global-set-key "\C-c\C-m" 'execute-extended-command)
+(global-set-key "\C-x\C-m" 'smex)
+(global-set-key "\C-c\C-m" 'smex)
+;; (global-set-key "\C-x\C-m" 'execute-extended-command)
+;; (global-set-key "\C-c\C-m" 'execute-extended-command)
+(global-set-key "\C-c\C-c\C-m" 'execute-extended-command)
 ; Prefer kill word to backspace
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
@@ -119,8 +122,7 @@
 
 ;; auto-complete
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories
-             "~/.emacs.d/elpa/auto-complete-20131128.233/dict")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
 (ac-config-default)
 (define-key ac-menu-map (kbd "M-n") 'ac-next)
 (define-key ac-menu-map (kbd "M-p") 'ac-previous)
@@ -128,11 +130,21 @@
 (setq ac-ignore-case nil)
 (add-to-list 'ac-modes 'python-mode)
 
+;; Setup jedi for pythong mode.
+(require 'python-environment)
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)                 ; optional
+
+(setq jedi:environment-root "jedi")  ; or any other name you like
+(setq jedi:environment-virtualenv
+      (append python-environment-virtualenv
+              '("--python" "/usr/bin/python3")))
+
 ;; fill column
-(require 'fill-column-indicator)
-;; (setq fci-rule-color "#99968b")
-(setq fci-rule-color "#6B6A66")
-(setq fci-rule-width 1)
+;; (require 'fill-column-indicator)
+;; ;; (setq fci-rule-color "#99968b")
+;; (setq fci-rule-color "#6B6A66")
+;; (setq fci-rule-width 1)
 
 ;; Projectile setup
 ;; (setq projectile-indexing-method 'git)
